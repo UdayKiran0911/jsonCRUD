@@ -21,7 +21,7 @@ y = {
 "4": {"name": "Mesone","age": 21,"address": { "street": "1 Main Street", "city": "Los Angeles", "zipcode": 90001},"married": False},
 }
 
-filepath = "<File Absolute(Full) Location>"
+filepath = "C:\\Users\\UyBodala\\OneDrive - SkillSoft Corporation\MyDocuments\\Python Supporting Scripts\\jsonfile.json"
 
 # Check if the file is empty, if the file size is not 0, the function will return False, if 0 will return True
 def isfileemtpy(filepath):
@@ -49,8 +49,8 @@ def jsonwriter(jsd, filepath):
                     jfile.update(jsd)
                     f.truncate(0)
                     f.write(json.dumps(jfile, indent=2, sort_keys=True))
-                else:
-                    print(f"Key {datakey} Already Exist")
+            else:
+                print(f"Key {datakey} Already Exist")
         else:
             f.write(json.dumps(jsd, indent=2, sort_keys=True))
 
@@ -95,8 +95,8 @@ def jsonreader(filepath):
             return json.load(f)
         else:
             print("File is Empty")
-
             
+# Examples
 jsonupdate(["3", "name", "Albatros"], filepath)
 jsonwriter(x, filepath)
 jsonwriter(y, filepath)
@@ -106,8 +106,6 @@ jsondelete("3", filepath)
 jsondelete("2", filepath)
 jsondelete("6", filepath)
 jsondelete("1", filepath)
-jsondelete("4", filepath)
-jsondelete("5", filepath)
 jsonwriter(z, filepath)
 jsonupdate(["1", "name", "Albatros"], filepath)
 jsonupdate(["7", "name", "Albatros"], filepath)
