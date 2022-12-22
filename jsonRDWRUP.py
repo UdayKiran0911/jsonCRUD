@@ -95,3 +95,20 @@ def jsonreader(filepath):
             return json.load(f)
         else:
             print("File is Empty")
+
+            
+jsonupdate(["3", "name", "Albatros"], filepath)
+jsonwriter(x, filepath)
+jsonwriter(y, filepath)
+jsonwriter(a, filepath)
+jsonupdate(["3", "name", "Albatros"], filepath)
+jsondelete("3", filepath)
+jsondelete("2", filepath)
+jsondelete("6", filepath)
+jsondelete("1", filepath)
+jsondelete("4", filepath)
+jsondelete("5", filepath)
+jsonupdate(["1", "name", "Albatros"], filepath)
+jsonupdate(["7", "name", "Albatros"], filepath)
+jsonupdate(["9", "married", True], filepath)
+jsonreader(filepath)
