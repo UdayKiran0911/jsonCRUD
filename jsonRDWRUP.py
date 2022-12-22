@@ -1,3 +1,8 @@
+import json
+import os
+
+filepath = "<File Absolute(Full) Location>"
+
 def isfileemtpy(filepath):
     if os.stat(filepath).st_size > 0:
         return False
@@ -20,6 +25,7 @@ def jsonwriter(jsd):
         else:
             f.write(json.dumps(jsd, indent=2, sort_keys=True))
 
+# Updaete takes a list as argument with three values ["id", "key", "value"]
 def jsonupdate(d_list):
     with open(filepath,"r+") as f:
         if not isfileemtpy(filepath):            
