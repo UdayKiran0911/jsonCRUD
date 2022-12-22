@@ -37,6 +37,15 @@ def iskeyexist(data, keyval):
     else:
         return False
 
+# the function is for reading the json file, it will check for file emptiness, if empty will raise "File is Empty" message
+def jsonreader(filepath):
+    with open(filepath,"r+") as f:
+        if not isfileemtpy(filepath):                
+            f.seek(0)
+            return json.load(f)
+        else:
+            print("File is Empty")
+
 # the function will write the dictionary into a json file.
 # it will also check for the emptiness of the file, if the file is not empty, it will check if the key already exist,
 # if it does not exist only then it will be added.
@@ -86,15 +95,6 @@ def jsondelete(id, filepath):
                 print(f"Key {id} Not Found")
     else:
         print("File is Empty")
-
-# the function is for reading the json file, it will check for file emptiness, if empty will raise "File is Empty" message
-def jsonreader(filepath):
-    with open(filepath,"r+") as f:
-        if not isfileemtpy(filepath):                
-            f.seek(0)
-            return json.load(f)
-        else:
-            print("File is Empty")
             
 # Examples
 jsonupdate(["3", "name", "Albatros"], filepath)
